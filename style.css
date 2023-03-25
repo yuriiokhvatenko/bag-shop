@@ -28,30 +28,64 @@ ul {
   list-style: none;
 }
 
-/* Стилі хедера */
+/* Стилі меню навігації */
 header {
-  background-color: #f5deb3;
-  padding: 1rem;
+  background-color: #f5f5f5;
+  padding: 1rem 0;
 }
 
-nav ul {
+nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav li {
-  margin-left: 1rem;
+.nav-left ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-nav a {
-  padding: 0.5rem;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
+.nav-left li {
+  margin-right: 2rem;
 }
 
-nav a:hover {
+.nav-left a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-left a:hover {
+  color: #8b4513;
+}
+
+.btn-phone,
+.btn-email {
+  display: inline-block;
   background-color: #8b4513;
   color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-phone {
+  margin-right: 1rem;
+}
+
+.btn-phone:hover,
+.btn-email:hover {
+  background-color: #a0522d;
+}
+
+.fa-phone-alt,
+.fa-envelope {
+  margin-right: 0.5rem;
 }
 
 /* Стилі секції hero */
@@ -160,55 +194,40 @@ nav a:hover {
 }
 
 /* Стилі секції контакти */
-.contact {
-  background-color: #f5deb3;
-  padding: 3rem;
+.contact-section {
+  background-color: #fff;
+  padding: 4rem 0;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.contact-card {
+  flex-basis: calc(33.33% - 2rem);
+  margin: 1rem;
   text-align: center;
 }
 
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #8b4513;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-form label {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #8b4513;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid #8b4513;
+.contact-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
-form button[type="submit"] {
-  display: block;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  background-color: #8b4513;
-  color: #fff;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
+.contact-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-form button[type="submit"]:hover {
-  background-color: #fff;
+.contact-card p {
+  font-size: 1.25rem;
   color: #8b4513;
-  border: 1px solid #8b4513;
+  margin: 0;
 }
 
 /* Стилі футера */
@@ -233,4 +252,180 @@ footer p {
 .address p {
   font-size: 1rem;
   margin-bottom: 0.25rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 360px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .nav-left li {
+    margin-right: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    font-size: 1.25rem;
+  }
+
+  .collection h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .card button {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .contact-card {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 361px) and (max-width: 767px) {
+  .nav-left li {
+    margin-right: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    font-size: 1.25rem;
+  }
+
+  .collection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1.25rem;
+  }
+
+  .card button {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .contact-card {
+    flex-basis: calc(33.33% - 2rem);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content p {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    font-size: 1.75rem;
+  }
+
+  .collection h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .card p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card button {
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .contact-card {
+    flex-basis: calc(33.33% - 2rem);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-left li {
+    margin-right: 2.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+  }
+
+  .collection h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card button {
+    font-size: 2rem;
+    padding: 1.25rem 3rem;
+  }
+
+  .contact-card {
+    flex-basis: calc(33.33% - 2rem);
+  }
 }
